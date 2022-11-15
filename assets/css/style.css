@@ -255,10 +255,28 @@ p{
     font-size: 18px;
 }
 
+.mobile-nav .coll-icon{
+    position: relative;
+}
+
 .mobile-nav .coll-icon i{
     color: #fff;
     font-size: 26px;
     cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) scale(0);
+    transition: all .3s ease;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* transform: translateY(-50%); */
+}
+
+.mobile-nav .coll-icon i.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) scale(100%);
 }
 
 @media screen and (max-width:767px) {

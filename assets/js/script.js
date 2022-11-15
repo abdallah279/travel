@@ -18,17 +18,26 @@ window.addEventListener('scroll', function(){
     sectionActive();
 });
 
-const collapseNav = document.querySelector('.coll-icon');
+const collapseNavShow = document.querySelector('.coll-icon .show');
+const collapseNavHide = document.querySelector('.coll-icon .hide');
 const navbar = document.querySelector('.nav-desk');
 
-collapseNav.addEventListener('click', ()=>{
-    navbar.classList.toggle('active');
-    if(navbar.classList.contains('active')){
-        collapseNav.innerHTML = `<i class="fa-solid fa-xmark"></i>`
-    } else{
-        collapseNav.innerHTML = `<i class="fa-solid fa-bars"></i>`
-    }
+collapseNavShow.addEventListener('click', ()=>{
+    navbar.classList.add('active');
+    collapseNavHide.classList.add('active');
+    collapseNavShow.classList.remove('active');
+    // if(navbar.classList.contains('active')){
+    //     collapseNav.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+    // } else{
+    //     collapseNav.innerHTML = `<i class="fa-solid fa-bars"></i>`
+    // }
 });
+
+collapseNavHide.addEventListener('click', ()=>{
+    navbar.classList.remove('active');
+    collapseNavShow.classList.add('active');
+    collapseNavHide.classList.remove('active');
+})
 
 // section active class
 let sections = document.querySelectorAll(".section-m");
