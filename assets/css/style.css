@@ -339,7 +339,7 @@ p{
 .home-content{
     width: 600px;
     margin: auto;
-    /* text-align: center; */
+    text-align: center;
 }
 
 @media screen and (max-width:767px) {
@@ -998,6 +998,7 @@ p{
 .thumbnails-container{
     margin-top: 8px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .thumbnails-container .thumbnail{
@@ -1043,7 +1044,7 @@ p{
         height: 300px;
     }
 
-    .thumbnails-container .thumbnail:first-child, .thumbnails-container .thumbnail:nth-child(2){
+    .thumbnails-container .thumbnail:last-child, .thumbnails-container .thumbnail:nth-child(4){
         display: none;
     }
 }

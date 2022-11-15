@@ -105,6 +105,12 @@ const gallaryActive = document.querySelector('.gallary-active');
 const thumbnails = document.querySelectorAll('.thumbnail');
 const thumbnailsArray = Array.from(thumbnails);
 
+if (window.matchMedia("(max-width: 650px)").matches) {
+    thumbnailsArray.length = 3;
+} else{
+    thumbnailsArray.length = 5;
+}
+
 let timerInterval;
 let time = 3000;
 
@@ -113,7 +119,6 @@ autoRotateImg();
 function autoRotateImg(){
     timerInterval = setInterval(function(){
         thumbActiveImg = document.querySelector('.thumbnail.active');
-
         if(thumbActiveImg === thumbnailsArray[thumbnailsArray.length - 1]){
             let newImg = thumbnailsArray[0];
             updateActiveImg(newImg);
@@ -143,4 +148,4 @@ thumbnails.forEach(img =>{
         clearInterval(timerInterval);
         autoRotateImg();
     })
-})
+});
