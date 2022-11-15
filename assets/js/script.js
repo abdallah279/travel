@@ -1,0 +1,102 @@
+// // Loader
+// window.addEventListener('load', ()=>{
+//     setTimeout(() => {
+//       if(document.querySelector('.loader-bg')){
+//         $('.loader-bg').fadeOut(700);
+//       }
+//     }, 1000);
+// })
+
+// Header Fixed
+let header = document.querySelector('.navbar-m');
+header.classList.toggle('active', window.scrollY > 0);
+
+window.addEventListener('scroll', function(){
+    // Header Fixed
+    header.classList.toggle('active', window.scrollY > 0);
+    // section active class
+    sectionActive();
+});
+
+const collapseNav = document.querySelector('.coll-icon');
+const navbar = document.querySelector('.nav-desk');
+
+collapseNav.addEventListener('click', ()=>{
+    navbar.classList.toggle('active');
+    if(navbar.classList.contains('active')){
+        collapseNav.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+    } else{
+        collapseNav.innerHTML = `<i class="fa-solid fa-bars"></i>`
+    }
+});
+
+// section active class
+let sections = document.querySelectorAll(".section-m");
+
+function sectionActive(){
+    let scrollPosition = document.documentElement.scrollTop;
+
+    sections.forEach(section =>{
+        if(scrollPosition >= section.offsetTop - section.offsetHeight * .5 &&
+            scrollPosition < section.offsetTop + section.offsetHeight - section.offsetHeight * .5){
+
+            let sectionId = section.attributes.id.value;
+
+            removeActiveClasses();
+            addActiveClass(sectionId);
+        }
+    });
+}
+
+let navLinks = document.querySelectorAll(".nav-list-m a");
+
+// Remove All Active Classes
+function removeActiveClasses(){
+    navLinks.forEach(li =>{
+        li.classList.remove('active');
+    });
+}
+
+// Add Active Class To link Section
+function addActiveClass(id){
+    document.querySelector(`.nav-list-m a[href="#${id}"]`).classList.add('active');
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    let currentId = e.target.attributes.href.value;
+    let section = document.querySelector(currentId);
+
+    window.scroll({
+      top: section.offsetTop,
+      behavior: "smooth",
+    });
+  });
+});
+
+
+// Owl Carousel
+$(document).ready(function(){
+    $(".places").owlCarousel({
+        loop:true,
+        margin:25,
+        rtl: true,
+        nav:true,
+        responsiveClass:true,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:2,
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
+});
