@@ -138,6 +138,8 @@ function updateActiveImg(img){
 
     img.classList.add('active');
     gallaryActive.src = img.querySelector('img').src;
+    $('.gallary-active').fadeOut(0);
+    $('.gallary-active').fadeIn(400);
 }
 
 

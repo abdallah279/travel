@@ -91,6 +91,13 @@ p{
     }
 }
 
+.up:hover,
+.up:focus {
+  -webkit-box-shadow: inset 0 -4.25em 0 0 var(#fff);
+  box-shadow: inset 0 -4.25em 0 0 #fff;
+  color: var(--blue-color) !important;
+}
+
 .main-title{
     text-align: center;
     margin: 20px auto 50px;
@@ -405,10 +412,15 @@ p{
 .activite .act-text{
     color: var(--dark-color);
     font-size: 17px;
+    transition: all .3s ease;
 }
 
 .activite:hover{
-    background-color: var(--sec-color);
+    background-color: var(--blue-color);
+    color: #fff;
+}
+
+.activite:hover .act-text{
     color: #fff;
 }
 
@@ -549,6 +561,8 @@ p{
     font-size: 15px;
     padding: 8px 14px;
     border-radius: 25px;
+    transition: all .3s ease;
+    border: 1px solid var(--blue-color);
 }
 /******************* Start hotales Section *******************/
 
@@ -787,6 +801,7 @@ p{
     cursor: pointer;
     margin-right: -3px;
     border: 1px solid var(--sec-color);
+    transition: all .3s ease;
 }
 
 .contact-us .social .icons a{
@@ -932,6 +947,8 @@ p{
 }
 /******************* End Footer Section *******************/
 
+/******************* Start Gallary Section *******************/
+
 .images-con .images-info{
     font-size: 18px;
     line-height: 1.8;
@@ -966,7 +983,7 @@ p{
         margin-right: 5px;
         margin-left: 5px;
     }
-
+    
     .images-con .images-info{
         font-size: 15px;
     }
@@ -1039,12 +1056,14 @@ p{
         width: 100%;
         padding: 0 10px;
     }
-
+    
     .gallary-active-container{
         height: 300px;
     }
-
+    
     .thumbnails-container .thumbnail:last-child, .thumbnails-container .thumbnail:nth-child(4){
         display: none;
     }
 }
+
+/******************* End Gallary Section *******************/
