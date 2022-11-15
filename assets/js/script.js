@@ -100,3 +100,47 @@ $(document).ready(function(){
         }
     });
 });
+
+const gallaryActive = document.querySelector('.gallary-active');
+const thumbnails = document.querySelectorAll('.thumbnail');
+const thumbnailsArray = Array.from(thumbnails);
+
+let timerInterval;
+let time = 3000;
+
+autoRotateImg();
+
+function autoRotateImg(){
+    timerInterval = setInterval(function(){
+        thumbActiveImg = document.querySelector('.thumbnail.active');
+
+        if(thumbActiveImg === thumbnailsArray[thumbnailsArray.length - 1]){
+            let newImg = thumbnailsArray[0];
+            updateActiveImg(newImg);
+        }else{
+            let newImg = thumbActiveImg.nextElementSibling;
+            updateActiveImg(newImg);
+        }
+    }, time);
+}
+
+
+// Set Active Function
+function updateActiveImg(img){
+    thumbnails.forEach(thumb =>{
+        thumb.classList.remove('active');
+    });
+
+    img.classList.add('active');
+    gallaryActive.src = img.querySelector('img').src;
+}
+
+
+// Events
+thumbnails.forEach(img =>{
+    img.addEventListener('click', function(){
+        updateActiveImg(img);
+        clearInterval(timerInterval);
+        autoRotateImg();
+    })
+})
