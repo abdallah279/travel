@@ -82,6 +82,15 @@ p{
     background-color: #0dd2d1;
 }
 
+@media screen and (max-width:499px) {
+    .main-btn{
+        height: 40px;
+    }
+    .main-btn a{
+        padding: 0 28px;
+    }
+}
+
 .main-title{
     text-align: center;
     margin: 20px auto 50px;
@@ -353,6 +362,12 @@ p{
     font-weight: 600;
     margin-bottom: 10px;
     color: #fff;
+}
+
+@media screen and (max-width:499px) {
+    .home-content .home-title{
+        font-size: 25px;
+    }
 }
 /******************* End Header Home *******************/
 
