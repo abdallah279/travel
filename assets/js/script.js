@@ -104,6 +104,9 @@ $(document).ready(function(){
         autoplayHoverPause:true,
         responsive:{
             0:{
+                items:1
+            },
+            400:{
                 items:2,
             },
             600:{
