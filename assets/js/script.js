@@ -106,7 +106,7 @@ $(document).ready(function(){
             0:{
                 items:1
             },
-            425:{
+            435:{
                 items:2,
             },
             600:{
