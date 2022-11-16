@@ -912,17 +912,18 @@ p{
 
 .contact-us .email .input-g{
     height: 40px;
-    padding: 0;
+    padding: 0 2px 2px;
+    border: 1px solid var(--sec-color);
 }
 
 .contact-us .email .input-g input{
     direction: rtl;
     height: 100%;
-    border: 1px solid var(--sec-color);
     width: 210px;
     padding: 10px 10px;
     margin: 0;
     outline: none;
+    border: none;
 }
 
 .contact-us .email .input-g input::placeholder{
