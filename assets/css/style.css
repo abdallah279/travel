@@ -259,6 +259,11 @@ p{
 .mobile-nav .coll-icon{
     position: relative;
     width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
 }
 
 .mobile-nav .coll-icon i{
@@ -279,6 +284,34 @@ p{
     opacity: 1;
     pointer-events: auto;
     transform: translateY(-50%) scale(100%);
+}
+
+.mobile-nav .coll-icon span{
+    background-color: #fff;
+    width: 24px;
+    height: 3px;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: all .3s ease;
+}
+
+.mobile-nav .coll-icon span:last-child{
+    margin-bottom: 0;
+}
+
+.mobile-nav .coll-icon.active span:nth-child(2){
+    opacity: 0;
+}
+
+.mobile-nav .coll-icon.active span:first-child {
+    transform: rotate(-45deg) translateY(10px) translateX(3px);
+    margin-bottom: 0;
+}
+
+.mobile-nav .coll-icon.active span:last-child {
+    transform: rotate(45deg) translateY(-10px) translateX(3px);
+    margin-bottom: 0;
 }
 
 @media screen and (max-width:767px) {
